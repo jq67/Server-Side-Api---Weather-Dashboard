@@ -15,7 +15,8 @@ dateMonth = dateMonth + 1
 var dateDay = date.getDate()
 var dateYear = date.getFullYear()
 
-let apiKey = 'f2c8e9cd8ddc56a988df6bb01b8748dc'
+// let apiKey = '39d5ef987e1c9e7714c917079d549648'
+let apiKey = config.apiKey
 let dailySearch = 'https://api.openweathermap.org/data/2.5/onecall?'
 
 let search = function() {
@@ -34,7 +35,7 @@ let search = function() {
 }
 
 let preformSearch = function () {
-    let citySearch = `https://api.openweathermap.org/data/2.5/weather?q=${searchBar.value}&appid=f2c8e9cd8ddc56a988df6bb01b8748dc&units=metric`
+    let citySearch = `https://api.openweathermap.org/data/2.5/weather?q=${searchBar.value}&appid=${apiKey}&units=metric`
     fetch(citySearch)
     .then(function (response) {
     if (!response.ok) {
@@ -108,7 +109,7 @@ let preformSearch = function () {
 
 let historySearch = function () {
     console.log('ffff')
-    let historySearch = `https://api.openweathermap.org/data/2.5/weather?q=${this.textContent}&appid=f2c8e9cd8ddc56a988df6bb01b8748dc&units=metric`
+    let historySearch = `https://api.openweathermap.org/data/2.5/weather?q=${this.textContent}&appid=${apiKey}&units=metric`
     fetch(historySearch)
     .then(function (response) {
     if (!response.ok) {
